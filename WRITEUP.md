@@ -10,7 +10,8 @@ Provide a write-up / README document including all rubric items addressed in a c
 The write-up / README should include a statement and supporting figures / images that explain how each rubric item was addressed, and specifically where in the code each step was handled. The write-up should include a discussion of what worked, what didn't and how the project implementation could be improved going forward.
 This report should be written with a technical emphasis (i.e. concrete, supporting information and no 'hand-waiving'). Specifications are met if a reader would be able to replicate what you have done based on what was submitted in the report. This means all network architecture should be explained, parameters should be explicitly stated with factual justifications, and plots / graphs are used where possible to further enhance understanding. A discussion on potential improvements to the project submission should also be included for future enhancements to the network / parameters that could be used to increase accuracy, efficiency, etc. It is not required to make such enhancements, but these enhancements should be explicitly stated in its own section titled "Future Enhancements".
 
-####Description
+#### Description
+
 CNN consists of convolution layers followed by fully connected layers and finally a softmax activation function. This works well for classification tasks.
 If we want to find a particular item in picture the CNN maynot work as fully connected layers doesnot retain any spatial information.
 
@@ -24,6 +25,7 @@ FCNs help in semantic segmentation. FCNs works with three techniques.
 - Skip connections
 
 
+##### 1X1 convolution
 In 1x1 convolution the tensor remains 4D instead of getting flattened to 2D. Hence the spatial information is preserved.
 
 A 1x1 convolution is essentially convolving with a set of filters of dimensions:
@@ -33,33 +35,43 @@ stride = 1, and
 zero (same) padding.
 
 
-Transposed convolution
+[image_2]: ./misc/fcn.png
+![alt text][image_0] 
+
+##### Transposed convolution
 It is reverse convolution where foward and backward passed are swapped.
 
-Skip Connections
+##### Skip Connections
 The global information is lost in encoder blocks as we look at patches. Skip connection helps to retain that information. The output of one layer is connected to non-adjacent layer.
 
 
 This project implements a fully convolutional Deep Neural Network (FCN) for semantic segmentation. Semantic segmentation  accurately segments to the actual shape of the object unlike bounding boxes. The DNN learns and later identifies and tracks a target in simulation. This target is called the `hero` throughout this documentation. 
 
 
-FCN:Decoder
+##### FCN:Decoder
 The FCN decoder can be made up of bilinear upsampling. It uses the weighted average of 4 nearest known pixels located diagonally to known pixel.
 The bilinear upsampling layer is not a learning layer and lose some finer details, in addition it helps speed up performance.
 
 
-####Criteria
+#### Criteria
 The write-up conveys the an understanding of the network architecture.
 
-####Meets Specification
+#### Meets Specification
 The student clearly explains each layer of the network architecture and the role that it plays in the overall network. The student can demonstrate the benefits and/or drawbacks of different network architectures pertaining to this project and can justify the current network with factual data. Any choice of configurable parameters should also be explained in the network architecture.
 The student shall also provide a graph, table, diagram, illustration or figure for the overall network to serve as a reference for the reviewer.
 
 
-####Criteria
+The network architecture is composed of following layers
+- 3 encoder layers
+- 1x1 conv layer
+- 3 decoder layers
+
+
+
+#### Criteria
 The write-up conveys the student's understanding of the parameters chosen for the the neural network.
 
-####Meets Specification
+#### Meets Specification
 The student explains their neural network parameters including the values selected and how these values were obtained (i.e. how was hyper tuning performed? Brute force, etc.) Hyper parameters include, but are not limited to:
 
 Epoch
@@ -68,41 +80,41 @@ Batch Size
 Etc.
 All configurable parameters should be explicitly stated and justified.
 
-####Criteria
+#### Criteria
 The student has a clear understanding and is able to identify the use of various techniques and concepts in network layers indicated by the write-up.
 
 
-####Meets Specification
+#### Meets Specification
 The student demonstrates a clear understanding of 1 by 1 convolutions and where/when/how it should be used.
 The student demonstrates a clear understanding of a fully connected layer and where/when/how it should be used.
 
-####Criteria
+#### Criteria
 The student has a clear understanding of image manipulation in the context of the project indicated by the write-up.
 
 
-####Meets Specification
+#### Meets Specification
 The student is able to identify the use of various reasons for encoding / decoding images, when it should be used, why it is useful, and any problems that may arise.
 
 
-####Criteria
+#### Criteria
 The student displays a solid understanding of the limitations to the neural network with the given data chosen for various follow-me scenarios which are conveyed in the write-up.
 
 
-####Meets Specification
+#### Meets Specification
 The student is able to clearly articulate whether this model and data would work well for following another object (dog, cat, car, etc.) instead of a human and if not, what changes would be required.
 
 
-####Criteria
+#### Criteria
 The model is submitted in the correct format.
 
-####Meets Specification
+#### Meets Specification
 The file is in the correct format (.h5) and runs without errors.
 
-####Criteria
+#### Criteria
 The neural network must achieve a minimum level of accuracy for the network implemented.
 
 
-####Meets Specification
+#### Meets Specification
 The neural network should obtain an accuracy greater than or equal to 40% (0.40) using the Intersection over Union (IoU) metric.
 
 
