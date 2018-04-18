@@ -162,38 +162,37 @@ Increased  steps_per_epochs = 200 and saw validation loss reduced to 0.039 and f
 
 
 Finally settled for following 
-learning_rate = 0.005
+learning_rate = 0.01
 batch_size = 64
 num_epochs = 20
 steps_per_epoch = 400
 validation_steps = 50
 workers = 2
 
-
 ## Step 5 - Prediction
 
 * Scores for while the quad is following behind the target.
-      "number of validation samples intersection over the union evaulated on 542\n",
-      "average intersection over union for background is 0.9941827831321841\n",
-      "average intersection over union for other people is 0.2884075906302439\n",
-      "average intersection over union for the hero is 0.8555500256420691\n",
-      "number true positives: 539, number false positives: 0, number false negatives: 0\n"
+      number of validation samples intersection over the union evaulated on 542
+      average intersection over union for background is 0.9941827831321841
+      average intersection over union for other people is 0.2884075906302439
+      average intersection over union for the hero is 0.8555500256420691
+      number true positives: 539, number false positives: 0, number false negatives: 0
 
 
 * Scores for images while the quad is on patrol and the target is not visible
-      "number of validation samples intersection over the union evaulated on 270\n",
-      "average intersection over union for background is 0.981282477843907\n",
-      "average intersection over union for other people is 0.6251760579059025\n",
-      "average intersection over union for the hero is 0.0\n",
-      "number true positives: 0, number false positives: 119, number false negatives: 0\n"
+      number of validation samples intersection over the union evaulated on 270
+      average intersection over union for background is 0.981282477843907
+      average intersection over union for other people is 0.6251760579059025
+      average intersection over union for the hero is 0.0
+      number true positives: 0, number false positives: 119, number false negatives: 0
 
 
 * This score measures how well the neural network can detect the target from far away
-      "number of validation samples intersection over the union evaulated on 322\n",
-      "average intersection over union for background is 0.9952181401297582\n",
-      "average intersection over union for other people is 0.38808783798777147\n",
-      "average intersection over union for the hero is 0.20167453310681088\n",
-      "number true positives: 173, number false positives: 4, number false negatives: 128\n"
+      number of validation samples intersection over the union evaulated on 322
+      average intersection over union for background is 0.9952181401297582
+      average intersection over union for other people is 0.38808783798777147
+      average intersection over union for the hero is 0.20167453310681088
+      number true positives: 173, number false positives: 4, number false negatives: 128
 
 * And the final grade score is
  0.390832754844
